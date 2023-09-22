@@ -220,7 +220,7 @@ success <- data.frame(m=numeric(nc), class.success=numeric(nc))
 for (i in 1:axes){
   cap <- CAPdiscrim(byc.otus ~ constraining_factor, data = microeco__cereals$sample_table, m = i, add = TRUE)
   success[i,1] <- cap$m
-  success[i,2] <- 100/length(cap$group)*length(which(cap$group == cap$CV))
+  success[i,2] <- 100/length(cap$ac_zone)*length(which(cap$ac_zone == cap$ac_zone))
 }
 # plot success rate for each axis
 plot(success$m, success$class.success, xlab = "Number of PCoA axes included", ylab = "Reclassification success rate (%)")
